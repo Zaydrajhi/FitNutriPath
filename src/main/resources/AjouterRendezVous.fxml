@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.AjouterRendezVousController"
+            prefHeight="800.0" prefWidth="1200.0"
+            style="-fx-background-color: linear-gradient(to bottom, #f8f9fa, #e9ecef);">
+
+    <top>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <Label text="Nouveau Rendez-vous" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Label text="Remplissez le formulaire ci-dessous pour ajouter un nouveau rendez-vous" 
+                   style="-fx-text-fill: #666;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+            <VBox spacing="20" style="-fx-padding: 20;">
+                <GridPane hgap="20" vgap="20" alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints prefWidth="200"/>
+                        <ColumnConstraints prefWidth="400"/>
+                    </columnConstraints>
+
+                    <!-- Nom -->
+                    <Label text="Nom:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <TextField fx:id="nomField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                    <!-- Prénom -->
+                    <Label text="Prénom:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <TextField fx:id="prenomField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                    <!-- Description -->
+                    <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                    <TextArea fx:id="descriptionField" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                    <!-- Type -->
+                    <Label text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                    <ComboBox fx:id="typeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                    <!-- Date et Heure -->
+                    <Label text="Date et Heure:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                    <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <DatePicker fx:id="datePicker"/>
+                        <ComboBox fx:id="heureComboBox"/>
+                    </HBox>
+
+                    <!-- Téléphone -->
+                    <Label text="Téléphone:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                    <TextField fx:id="telephoneField" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                    <!-- Taille -->
+                    <Label text="Taille (cm):" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                    <TextField fx:id="tailleField" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+                    <!-- Poids -->
+                    <Label text="Poids (kg):" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+                    <TextField fx:id="poidsField" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+                    <!-- Objectif -->
+                    <Label text="Objectif:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+                    <TextArea fx:id="objectifField" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+
+                    <!-- Date de début -->
+                    <Label text="Date de début:" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+                    <DatePicker fx:id="dateDebutPicker" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+
+                    <!-- Date de fin -->
+                    <Label text="Date de fin:" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+                    <DatePicker fx:id="dateFinPicker" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+
+                    <!-- Priorité -->
+                    <Label text="Priorité:" GridPane.columnIndex="0" GridPane.rowIndex="11"/>
+                    <ComboBox fx:id="prioriteComboBox" GridPane.columnIndex="1" GridPane.rowIndex="11"/>
+
+                    <!-- Boutons -->
+                    <HBox alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="12">
+                        <Button fx:id="btnRdv" onAction="#ajouterRendezVous" 
+                                style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;" 
+                                text="Soumettre" />
+                        <Button fx:id="btnRegimes" onAction="#retourAccueil" 
+                                style="-fx-background-color: #757575; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;" 
+                                text="Retour" />
+                    </HBox>
+                </GridPane>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

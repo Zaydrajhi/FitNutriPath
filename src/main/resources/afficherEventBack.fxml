@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.afficherEventBack">
+
+    <opaqueInsets>
+        <Insets top="520.0" />
+    </opaqueInsets>
+    <children>
+        <AnchorPane prefHeight="820.0" prefWidth="1490.0">
+            <children>
+                <!-- Fond dégradé -->
+                <Rectangle height="820.0" layoutX="-33.0" width="1523.0">
+                    <fill>
+                        <LinearGradient endX="0" endY="1" startX="0" startY="0">
+                            <stops>
+                                <Stop color="#02030A" offset="1.0" />
+                            </stops>
+                        </LinearGradient>
+                    </fill>
+                </Rectangle>
+                <!-- Barre latérale -->
+                <VBox fx:id="menuVBox" alignment="TOP_LEFT" layoutX="-1.0" prefHeight="792.0" prefWidth="251.0" spacing="20" style="-fx-padding: 40 0;">
+                    <!-- En-tête avec logo et nom de l'application -->
+                    <HBox fx:id="headerHBox" alignment="CENTER_LEFT" prefHeight="122.0" prefWidth="134.0" spacing="10" style="-fx-padding: 10;">
+                        <VBox alignment="TOP_LEFT" spacing="0">
+                            <ImageView fx:id="logo_menu" fitHeight="84.0" fitWidth="196.0" preserveRatio="true">
+                                <image>
+                                    <Image url="@images/logo.jpeg" />
+                                </image>
+                            </ImageView>
+                            <Label fx:id="appName" prefHeight="10.0" prefWidth="10.0" styleClass="app-name" text="WTL : Way To Live" wrapText="true" />
+                        </VBox>
+                    </HBox>
+
+                    <!-- Boutons du menu -->
+                    <Button prefHeight="46.0" prefWidth="130.0" styleClass="menu-button" text="Mon Compte">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0">
+                                <image>
+                                    <Image url="@images/profile.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="btnEvenements" prefHeight="49.0" prefWidth="131.0" styleClass="menu-button" text="Événements">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0">
+                                <image>
+                                    <Image url="@images/event.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="btnWorkouts" prefHeight="47.0" prefWidth="136.0" styleClass="menu-button" text="Rendez-vous">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0">
+                                <image>
+                                    <Image url="@images/rdv.jpeg" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="btnForum" prefHeight="45.0" prefWidth="128.0" styleClass="menu-button" text="Plan Sportif">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0">
+                                <image>
+                                    <Image url="@images/fitness.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="btnProduits" prefHeight="49.0" prefWidth="126.0" styleClass="menu-button" text="Produits Sportifs">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0">
+                                <image>
+                                    <Image url="@images/shopping.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </VBox>
+            <AnchorPane layoutX="250.0" layoutY="7.0" prefHeight="82.0" prefWidth="1086.0">
+               <children>
+                  <Rectangle fx:id="cadre" arcHeight="50" arcWidth="50" fill="rgba(255, 255, 255, 0.6)" height="751.0" layoutX="42.0" layoutY="27.0" stroke="#677e93" strokeWidth="2" width="1155.0" />
+                  <Label layoutX="433.0" layoutY="40.0" prefHeight="42.0" prefWidth="272.0" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-font-family: 'Arial'; -fx-text-fill: black;" text="Les évènements">
+                     <font>
+                        <Font name="Maiandra GD" size="30.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="ajoutEx" layoutX="954.0" layoutY="186.0" onAction="#ajouterEvent" style="-fx-background-color: #00c6a9; -fx-font-size: 16px; -fx-font-weight: bold;                -fx-font-family: 'Arial'; -fx-text-fill: black;                -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 15);" text="Formulaire d'ajout" />
+                  <Button fx:id="btn_trier" layoutX="779.0" layoutY="184.0" onAction="#trier" style="-fx-background-color: #00c6a9; -fx-font-size: 16px; -fx-font-weight: bold;                -fx-font-family: 'Arial'; -fx-text-fill: black;                -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 15);" text="Trier la liste" />
+                  <TextField fx:id="tf_muscle" layoutX="488.0" layoutY="175.0" prefHeight="38.0" prefWidth="156.0" promptText="Muscle travaillé" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-padding: 10; -fx-border-color: #677e93; -fx-border-width: 2;" />
+                  <Label layoutX="471.0" layoutY="143.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-font-family: 'Arial'; -fx-text-fill: black;" text="Filtrer par  :" />
+                  <TextField fx:id="tf_nom" layoutX="181.0" layoutY="175.0" prefHeight="38.0" prefWidth="156.0" promptText="nom d'exercice" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-padding: 10; -fx-border-color: #677e93; -fx-border-width: 2;" />
+                  <Label layoutX="166.0" layoutY="143.0" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-font-family: 'Arial'; -fx-text-fill: black;" text="Chercher par nom :" />
+                  <ImageView fitHeight="31.0" fitWidth="34.0" layoutX="698.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../integration/src/main/resources/images/list.png" />
+                     </image>
+                  </ImageView>
+                  <VBox fx:id="detailsContainer" layoutX="158.0" layoutY="251.0" prefHeight="478.0" prefWidth="971.0" spacing="10" styleClass="details-container">
+                     <children>
+                        <ScrollPane fitToWidth="true" prefHeight="483.0">
+                           <content>
+                              <GridPane fx:id="gridPaneEvents" styleClass="grid-pane">
+                                 <columnConstraints>
+                                    <ColumnConstraints />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints />
+                                 </rowConstraints>
+                                 <children>
+                                    <VBox styleClass="card">
+                                       <children>
+                                          <Label styleClass="card-title" text="Titre de l'événement" />
+                                          <Label styleClass="card-text" text="Description de l'événement" />
+                                          <Label styleClass="card-text" text="Date: 01/01/2024" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+
+
+            </children>
+
+        </AnchorPane>
+
+    </children>
+
+</AnchorPane>

@@ -1,0 +1,307 @@
+/* Style général */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Fond d'écran flou avec animation */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("img/imgbck.jpg") no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(0.75px) brightness(0.8);
+    z-index: -1;
+    animation: backgroundAnimation 12s infinite alternate ease-in-out;
+    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.3); /* Ombre subtile à l'intérieur */
+}
+
+@keyframes backgroundAnimation {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Conteneur principal */
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 85%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Panneau gauche */
+.left-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    padding: 40px;
+    position: relative;
+}
+
+.left-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 169, 140, 0.1), rgba(0, 169, 140, 0.3));
+    z-index: -1;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+    }
+}
+
+.login-card, .register-card {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.login-card h2, .register-card h2 {
+    font-size: 28px;
+    color: #00a98c;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00a98c;
+    box-shadow: 0 0 8px rgba(0, 169, 140, 0.3);
+}
+
+.btn-login, .btn-register {
+    width: 100%;
+    max-width: 350px;
+    padding: 12px;
+    background-color: #00a98c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.btn-login:hover, .btn-register:hover {
+    background-color: #008b75;
+    transform: scale(1.05);
+}
+
+/* Panneau droit */
+.right-panel {
+    flex: 1;
+    background-color: #00a98c;
+    color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.site-title {
+    font-size: 38px;
+    margin-bottom: 10px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.slogan {
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.6;
+    animation: fadeIn 1.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Logo */
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: popIn 1s ease-out;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Style pour le texte "Pas de compte ?" et le bouton d'inscription */
+.signup-text {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+}
+
+.signup-text a {
+    color: #00a98c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.signup-text a:hover {
+    color: #008b75;
+}
+
+/* Le bouton d'inscription sous le texte */
+.btn-signup {
+    padding: 12px;
+    background-color: #00a98c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    display: block;
+    width: auto;  /* Le bouton ajuste sa largeur à son contenu */
+    margin: 10px auto 0;  /* Centrer le bouton sous le texte */
+}
+
+.btn-signup:hover {
+    background-color: #008b75;
+    transform: scale(1.05);
+}
+
+/* Style amélioré pour les champs de formulaire */
+.form-group input {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    border-color: #00a98c;
+    box-shadow: 0 0 8px rgba(0, 169, 140, 0.3);
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.btn-primary {
+    background-color: #00a98c;
+    border-color: #00a98c;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #008b75;
+}
+
+/* Style général pour les boutons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Style pour le bouton secondaire */
+.btn-secondary {
+    background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border-color: #4CAF50; /* Bordure de même couleur */
+}
+
+.btn-secondary:hover {
+    background-color: #45a049; /* Couleur de fond au survol */
+    border-color: #45a049; /* Bordure au survol */
+}

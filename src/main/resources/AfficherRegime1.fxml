@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Rectangle?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.AfficherRegime1Controller" spacing="10" style="-fx-padding: 20;">
+
+    <!-- PDF Export Section -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <TextField fx:id="pdfPathField" promptText="Chemin du fichier PDF..." 
+                  prefWidth="300" style="-fx-padding: 8;"/>
+        <Button fx:id="choosePdfLocation" text="Choisir l'emplacement" 
+                style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button fx:id="exportPdfButton" text="Exporter PDF" 
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button fx:id="analyseIAButton" text="Analyse IA" 
+                onAction="#analyserRegimeIA"
+                style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+        <Button fx:id="retourButton" text="Retour" 
+                onAction="#handleRetour"
+                style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15;"/>
+    </HBox>
+
+    <!-- TableView Section -->
+    <TableView fx:id="regimeTable" style="-fx-base: #f5f5f5; -fx-background-color: #ffffff; -fx-border-color: #ddd;">
+        <columns>
+            <TableColumn fx:id="titreCol" text="Title" prefWidth="150" style="-fx-font-weight: bold;"/>
+            <TableColumn fx:id="descriptionCol" text="Description" prefWidth="200" style="-fx-font-weight: bold;"/>
+            <TableColumn fx:id="objectifCol" text="Objective" prefWidth="150" style="-fx-font-weight: bold;"/>
+            <TableColumn fx:id="dureeCol" text="Duration (days)" prefWidth="100" style="-fx-font-weight: bold;"/>
+            <TableColumn fx:id="caloriesCol" text="Calories" prefWidth="100" style="-fx-font-weight: bold;"/>
+            <TableColumn fx:id="activiteCol" text="Activity Level" prefWidth="120" style="-fx-font-weight: bold;"/>
+            <TableColumn fx:id="actionsCol" text="Actions" prefWidth="150" style="-fx-font-weight: bold;"/>
+        </columns>
+    </TableView>
+</VBox>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.ScrollPane?>
+<?import javafx.scene.control.ScrollPane?>
+<VBox fx:id="contentVBox" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RendezVousController">
+    <children>
+        <Label text="📅 Liste des Rendez-vous" style="-fx-font-size: 22px; -fx-text-fill: black; -fx-font-weight: bold;"/>
+        <ScrollPane>
+            <content>
+                <!-- Rendez-vous List will be added dynamically -->
+            </content>
+        </ScrollPane>
+    </children>
+</VBox>

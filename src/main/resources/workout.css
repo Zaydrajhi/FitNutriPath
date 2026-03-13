@@ -1,0 +1,240 @@
+/* Style du texte du nom de l'application */
+.app-name {
+    -fx-font-size: 25px;  /* Taille de la police */
+    -fx-font-family: "Verdana";  /* Police du titre */
+    -fx-font-weight: bold;  /* Gras */
+    -fx-text-fill: #677e93;  /* Couleur du texte */
+    -fx-line-spacing: 5px;  /* Espacement entre les lignes si nécessaire */
+    -fx-padding: 10px;  /* Padding autour du texte */
+}
+
+/* Style de l'image du logo */
+#logo {
+    -fx-fit-width: 80px;  /* Largeur du logo */
+    -fx-fit-height: 80px;  /* Hauteur du logo */
+    -fx-preserve-ratio: true;  /* Maintenir le ratio de l'image */
+}
+
+/* Style par défaut des boutons du menu */
+.menu-button {
+    -fx-background-color: white;  /* Fond blanc pour les boutons */
+    -fx-text-fill: #677e93;  /* Texte en bleu */
+    -fx-font-size: 14px;  /* Taille de la police */
+    -fx-font-weight: bold;  /* Texte en gras */
+    -fx-border-color: #677e93;  /* Bordure bleue */
+    -fx-border-width: 2px;  /* Épaisseur de la bordure */
+    -fx-padding: 10 20;  /* Padding adapté pour ajouter de l'espace pour les icônes */
+    -fx-cursor: hand;
+    -fx-min-width: 180px;  /* Largeur minimale des boutons */
+    -fx-max-width: 180px;  /* Largeur maximale des boutons */
+    -fx-background-radius: 30px;  /* Coins arrondis */
+    -fx-border-radius: 30px;  /* Coins arrondis pour la bordure */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0, 0, 4);  /* Ombre légère */
+}
+
+/* Effet de survol (hover) */
+.menu-button:hover {
+    -fx-background-color: #677e93;  /* Fond bleu au survol */
+    -fx-text-fill: white;  /* Texte en blanc */
+    -fx-border-radius: 30px;  /* Coins arrondis */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 8, 0, 0, 6);  /* Ombre renforcée */
+}
+
+/* Style lors du clic (pressed) */
+.menu-button:pressed {
+    -fx-background-color: #677e93;  /* Bleu foncé lors du clic */
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 5);  /* Ombre modérée */
+}
+
+/* Style de la VBox contenant les boutons */
+VBox#menuVBox {
+    -fx-background-color: rgba(255, 255, 255, 0.6);  /* Fond blanc semi-transparent pour la VBox */
+    -fx-border-color:  #677e93;  /* Bordure bleue */
+    -fx-border-width: 3px;  /* Bordure de 3px pour la rendre plus visible */
+    -fx-border-radius: 20px;  /* Coins arrondis pour la VBox */
+    -fx-padding: 20;  /* Padding interne */
+    -fx-spacing: 25;  /* Espacement entre les boutons */
+    -fx-alignment: center;  /* Centrage des boutons */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 15);  /* Ombre plus marquée pour éviter de cacher la bordure */
+}
+
+/* HBox pour l'alignement du nom et logo */
+/* HBox pour l'alignement du nom et logo */
+#headerHBox {
+    -fx-alignment: center-left;  /* Alignement à gauche du nom et du logo */
+    -fx-spacing: 10;  /* Espacement entre le logo et le nom */
+    -fx-padding: 10;  /* Padding autour du HBox */
+}
+
+/* Style pour le nom de l'application */
+.app-name {
+    -fx-font-size: 18px;  /* Taille de police lisible */
+    -fx-font-weight: bold;  /* Texte en gras pour se démarquer */
+    -fx-text-fill: #ffffff;  /* Couleur blanche pour contraster avec le fond dégradé */
+    -fx-min-height: 20px;  /* Hauteur minimale pour assurer la visibilité */
+    -fx-pref-width: 200px;  /* Largeur préférée pour éviter le tronquage */
+    -fx-wrap-text: true;  /* Confirmation du retour à la ligne si nécessaire */
+}
+
+/* Style pour les boutons demandés */
+#btn_filtrer, #tri, #retourner ,#btn_ajouter , #afficher ,#btn_modifier , #afficherEx, #workout , #btnLogin,#sendButton ,#suivantButton,#genererWorkout,#btn_enregistrerPerformance{
+    -fx-background-color: #c7f705;  /* Fond jaune */
+    -fx-text-fill: black;  /* Texte en noir */
+    -fx-font-weight: bold;  /* Texte en gras */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 4);  /* Ombre */
+    -fx-border-radius: 10px;  /* Coins arrondis */
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;  /* Espacement interne */
+}
+
+/* Animation au survol */
+#btn_filtrer:hover, #tri:hover, #retourner,#btn_ajouter , #afficher , #btn_modifier,#sendButton,#suivantButton,#genererWorkout,#btn_enregistrerPerformance :hover {
+    -fx-background-color: #e0ff33;  /* Jaune plus clair */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 12, 0, 0, 6);  /* Ombre renforcée */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Animation lors du clic */
+#btn_filtrer:pressed, #tri:pressed, #retourner , #btn_ajouter , #afficher , #btn_modifier,#sendButton,#suivantButton ,#genererWorkout,#btn_enregistrerPerformance:pressed {
+    -fx-background-color: #b2cf04;  /* Jaune plus foncé */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0, 0, 3);  /* Ombre réduite */
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+/* Style du cadre central avec fond légèrement transparent */
+#cadre {
+    -fx-background-color: rgba(255, 255, 255, 0);  /* Fond blanc semi-transparent */
+    -fx-border-color: #677e93;  /* Bordure bleue */
+    -fx-border-width: 3px;  /* Bordure épaisse */
+    -fx-border-radius: 30px;  /* Coins arrondis */
+    -fx-padding: 20;  /* Padding à l'intérieur du cadre */
+    -fx-alignment: center;  /* Centrer les éléments à l'intérieur */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 10);  /* Ombre pour le cadre */
+    -fx-min-width: 500px;  /* Largeur minimale du cadre */
+    -fx-max-width: 600px;  /* Largeur maximale du cadre */
+    -fx-min-height: 400px;  /* Hauteur minimale du cadre */
+    -fx-max-height: 500px;  /* Hauteur maximale du cadre */
+}
+/* Style pour le TextArea (chatArea) */
+#chatArea {
+    -fx-background-radius: 20; /* Rayon des coins arrondis */
+    -fx-border-radius: 20; /* Rayon des coins arrondis pour la bordure */
+    -fx-border-color: #677e93; /* Couleur de la bordure */
+    -fx-border-width: 2; /* Épaisseur de la bordure */
+    -fx-padding: 10; /* Espacement intérieur */
+}
+
+/* Style pour le TextField (inputField) */
+#inputField {
+    -fx-background-radius: 20; /* Rayon des coins arrondis */
+    -fx-border-radius: 20; /* Rayon des coins arrondis pour la bordure */
+    -fx-border-color: #677e93; /* Couleur de la bordure */
+    -fx-border-width: 2; /* Épaisseur de la bordure */
+    -fx-padding: 10; /* Espacement intérieur */
+}
+/* Style pour le TextArea (chatArea) */
+.rounded-text-area {
+    -fx-background-radius: 20; /* Rayon des coins arrondis */
+    -fx-border-radius: 20; /* Rayon des coins arrondis pour la bordure */
+    -fx-border-color: #677e93; /* Couleur de la bordure */
+    -fx-border-width: 2; /* Épaisseur de la bordure */
+    -fx-padding: 10; /* Espacement intérieur */
+}
+
+/* Style pour le TextField (inputField) */
+.rounded-text-field {
+    -fx-background-radius: 20; /* Rayon des coins arrondis */
+    -fx-border-radius: 20; /* Rayon des coins arrondis pour la bordure */
+    -fx-border-color: #677e93; /* Couleur de la bordure */
+    -fx-border-width: 2; /* Épaisseur de la bordure */
+    -fx-padding: 10; /* Espacement intérieur */
+}
+
+/* Style pour le titre */
+.title-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1b2728;
+}
+
+/* Style pour la question */
+.question-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Style pour le résultat */
+.result-label {
+    -fx-text-fill: #555555;
+}
+
+
+.menu-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-radius: 5;
+}
+
+/* Style pour le nom de l'application */
+.app-name {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+.details-root {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 20;
+    -fx-border-color: #39cad8;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1b2728;
+}
+.info-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333333;
+}
+.exercices-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #39cad8;
+}
+.exercice-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555555;
+}
+#btnRetour {
+    -fx-background-color: #677e93; /* Couleur du bouton retour */
+    -fx-text-fill: white; /* Couleur du texte */
+    -fx-border-radius: 15; /* Bordure arrondie */
+}
+#retour {
+    -fx-background-color: #677e93; /* Couleur du bouton retour */
+    -fx-text-fill: white; /* Couleur du texte */
+    -fx-border-radius: 15; /* Bordure arrondie */
+}
+#statsChart .chart-plot-background {
+    -fx-background-color: transparent; /* Fond transparent pour le graphique */
+}
+.line-chart {
+    -fx-background-color: transparent; /* Fond transparent pour le graphique */
+}
+
+/* Style pour les TextField */
+.text-field {
+    -fx-background-radius: 15; /* Bordure arrondie */
+    -fx-border-color: #677e93; /* Couleur de la bordure */
+    -fx-border-radius: 15; /* Bordure arrondie */
+    -fx-border-width: 2px; /* Largeur de la bordure */
+    -fx-padding: 10px; /* Espacement interne */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-text-fill: #333333; /* Couleur du texte */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 5); /* Ombre légère */
+}
+
+

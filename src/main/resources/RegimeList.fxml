@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane fx:id="id_anchor"
+            prefHeight="610.0" prefWidth="896.0"
+            style="-fx-background-color: #0a0a0a;"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.RegimeListController">
+    <children>
+        <!-- Header Area -->
+        <HBox alignment="CENTER_LEFT" spacing="20"
+              AnchorPane.leftAnchor="30.0"
+              AnchorPane.rightAnchor="30.0"
+              AnchorPane.topAnchor="20.0">
+
+            <Button fx:id="id_reload"
+                    mnemonicParsing="false"
+                    onAction="#reload_page"
+                    style="-fx-background-color: #00ffcc;
+                           -fx-text-fill: #121212;
+                           -fx-font-weight: bold;
+                           -fx-font-size: 14px;
+                           -fx-padding: 10px 20px;
+                           -fx-background-radius: 8px;
+                           -fx-effect: dropshadow(gaussian, #00ffcc, 10, 0.4, 0, 0);
+                           -fx-cursor: hand;"
+                    text="← Back" />
+
+            <Label style="-fx-text-fill: #00ffcc;
+                         -fx-font-size: 24px;
+                         -fx-font-weight: bold;"
+                   text="Regimes" />
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <Button mnemonicParsing="false"
+                    onAction="#addRegime"
+                    style="-fx-background-color: #00ffcc;
+                           -fx-text-fill: #121212;
+                           -fx-font-weight: bold;
+                           -fx-font-size: 14px;
+                           -fx-padding: 10px 20px;
+                           -fx-background-radius: 8px;
+                           -fx-effect: dropshadow(gaussian, #00ffcc, 10, 0.4, 0, 0);
+                           -fx-cursor: hand;"
+                    text="Add Regime" />
+        </HBox>
+
+        <!-- Search Area -->
+        <HBox alignment="CENTER_LEFT" spacing="20"
+              AnchorPane.leftAnchor="30.0"
+              AnchorPane.rightAnchor="30.0"
+              AnchorPane.topAnchor="70.0">
+
+            <TextField fx:id="searchField" promptText="Search by title or objective"
+                       style="-fx-background-color: #121212; -fx-text-fill: #fff;
+                      -fx-font-size: 14px; -fx-padding: 10px; -fx-border-color: #00ffcc;
+                      -fx-border-width: 2px; -fx-background-radius: 8px;"
+                       prefWidth="300.0"/>
+            <Button fx:id="searchButton" onAction="#searchRegime"
+                    style="-fx-background-color: #00ffcc; -fx-text-fill: #121212;
+                           -fx-font-weight: bold; -fx-font-size: 14px;
+                           -fx-padding: 10px 20px; -fx-background-radius: 8px;
+                           -fx-cursor: hand;" text="Search" />
+            <Button fx:id="sortByDureeButton" text="Sort by Duration ↑" onAction="#sortRegimesByDuree"
+                    style="-fx-background-color: #00ffcc; -fx-text-fill: #121212;
+               -fx-font-weight: bold; -fx-font-size: 14px;
+               -fx-padding: 10px 20px; -fx-background-radius: 8px;
+               -fx-cursor: hand;" />
+            <Button fx:id="sortByCaloriesButton" text="Sort by Calories ↑" onAction="#sortRegimesByCalories"
+                    style="-fx-background-color: #00ffcc; -fx-text-fill: #121212;
+               -fx-font-weight: bold; -fx-font-size: 14px;
+               -fx-padding: 10px 20px; -fx-background-radius: 8px;
+               -fx-cursor: hand;" />
+            <Button mnemonicParsing="false"
+                    onAction="#showStatistics"
+                    style="-fx-background-color: #00ffcc;
+               -fx-text-fill: #121212;
+               -fx-font-weight: bold;
+               -fx-font-size: 14px;
+               -fx-padding: 10px 20px;
+               -fx-background-radius: 8px;
+               -fx-effect: dropshadow(gaussian, #00ffcc, 10, 0.4, 0, 0);
+               -fx-cursor: hand;"
+                    text="Statistics" />
+        </HBox>
+
+        <!-- Main Content Area -->
+        <ScrollPane hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED"
+                    style="-fx-background-color: transparent;
+                          -fx-background: transparent;
+                          -fx-border-color: #00ffcc;
+                          -fx-border-width: 1px;
+                          -fx-border-radius: 15px;
+                          -fx-padding: 2px;"
+                    AnchorPane.leftAnchor="30.0"
+                    AnchorPane.rightAnchor="30.0"
+                    AnchorPane.topAnchor="140.0"
+                    AnchorPane.bottomAnchor="30.0">
+
+            <content>
+                <FlowPane fx:id="cardlayout"
+                          style="-fx-background-color: #0a0a0a;
+                                -fx-padding: 20px;
+                                -fx-hgap: 20px;
+                                -fx-vgap: 20px;">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                </FlowPane>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

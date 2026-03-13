@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.ProfilController"
+            prefHeight="600.0" prefWidth="800.0"
+            style="-fx-background-color: #f4f4f4;">
+
+    <VBox spacing="20" alignment="TOP_CENTER" AnchorPane.topAnchor="0.0" 
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" 
+          AnchorPane.bottomAnchor="0.0">
+        
+        <padding>
+            <Insets top="30" right="30" bottom="30" left="30"/>
+        </padding>
+
+        <!-- En-tête avec bouton retour -->
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <Button fx:id="backButton" text="Retour" onAction="#handleBack"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+        </HBox>
+
+        <!-- Image de profil -->
+        <ImageView fx:id="profileImageView" fitHeight="150.0" fitWidth="150.0" 
+                   preserveRatio="true">
+            <Image url="@images/default_user.png"/>
+        </ImageView>
+
+        <!-- Informations personnelles -->
+        <VBox spacing="15" alignment="CENTER" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 5;">
+            <Label text="Informations Personnelles" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+            <Separator/>
+            
+            <GridPane vgap="10" hgap="10">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="150" prefWidth="200"/>
+                    <ColumnConstraints minWidth="200" prefWidth="300"/>
+                </columnConstraints>
+                
+                <Label text="Login:" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Label fx:id="loginLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                
+                <Label text="Nom:" style="-fx-font-weight: bold;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Label fx:id="nomLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                
+                <Label text="Prénom:" style="-fx-font-weight: bold;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <Label fx:id="prenomLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                
+                <Label text="Date de naissance:" style="-fx-font-weight: bold;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <Label fx:id="dateNaissanceLabel" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                
+                <Label text="Téléphone:" style="-fx-font-weight: bold;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <Label fx:id="phoneLabel" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                
+                <Label text="Email:" style="-fx-font-weight: bold;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <Label fx:id="emailLabel" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                
+                <Label text="Rôle:" style="-fx-font-weight: bold;" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <Label fx:id="roleLabel" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                
+                <Label text="Statut:" style="-fx-font-weight: bold;" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                <Label fx:id="statutLabel" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+            </GridPane>
+        </VBox>
+
+        <!-- Boutons d'action -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button fx:id="editButton" text="Modifier mon profil" 
+                    onAction="#handleEditProfile"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            <Button fx:id="changePasswordButton" text="Changer le mot de passe" 
+                    onAction="#handleChangePassword"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+        </HBox>
+    </VBox>
+</AnchorPane> 

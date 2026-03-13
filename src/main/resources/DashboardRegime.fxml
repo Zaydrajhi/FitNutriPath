@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.fxml.FXML?>
+<FXML xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegimeController">
+    <VBox fx:id="contentVBox">
+        <Label text="🥗 Liste des Régimes" style="-fx-font-size: 22px; -fx-text-fill: black; -fx-font-weight: bold;"/>
+        <ScrollPane>
+            <content>
+                <!-- Regime List will be added dynamically -->
+            </content>
+        </ScrollPane>
+    </VBox>
+</FXML>

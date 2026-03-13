@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifierNutritionnisteController">
+    <children>
+        <!-- Fond dégradé -->
+        <Rectangle height="600.0" width="800.0">
+            <fill>
+                <LinearGradient endX="0" endY="1" startX="0" startY="0">
+                    <stops>
+                        <Stop color="#02030A" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </fill>
+        </Rectangle>
+
+        <!-- Titre -->
+        <Label layoutX="300.0" layoutY="30.0" text="Modification des Utilisateurs" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+
+        <!-- Formulaire dans un VBox -->
+        <VBox alignment="CENTER" layoutX="200.0" layoutY="100.0" spacing="20.0">
+            <GridPane hgap="10" vgap="10">
+                <Label text="Login:" style="-fx-text-fill: white;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfLogin" prefWidth="250.0" style="-fx-background-radius: 5;" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Nom:" style="-fx-text-fill: white;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfNom" prefWidth="250.0" style="-fx-background-radius: 5;" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Prénom:" style="-fx-text-fill: white;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfPrenom" prefWidth="250.0" style="-fx-background-radius: 5;" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Téléphone:" style="-fx-text-fill: white;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfTel" prefWidth="250.0" style="-fx-background-radius: 5;" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Email:" style="-fx-text-fill: white;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="tfEmail" prefWidth="250.0" style="-fx-background-radius: 5;" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <Label text="Image URL:" style="-fx-text-fill: white;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                    <TextField fx:id="tfImage" prefWidth="200.0" style="-fx-background-radius: 5;"/>
+                    <Button text="Parcourir" onAction="#handleChoisirImage" style="-fx-background-color: #00c6a9; -fx-text-fill: white;"/>
+                </HBox>
+
+                <Label text="Role:" style="-fx-text-fill: white;" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cbRole" prefWidth="250.0" style="-fx-background-radius: 5;" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <!-- Boutons -->
+            <HBox spacing="20" alignment="CENTER">
+                <Button text="Enregistrer" onAction="#enregistrerModifications" 
+                        style="-fx-background-color: #00c6a9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"/>
+                <Button text="Annuler" onAction="#handleAnnuler"
+                        style="-fx-background-color: #ff4d4d; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"/>
+            </HBox>
+        </VBox>
+
+        <ImageView fx:id="userImageView" fitHeight="40" fitWidth="40" preserveRatio="true">
+            <Image url="@images/default_user.png"/>
+        </ImageView>
+
+        <Label fx:id="userNameLabel" style="-fx-font-weight: bold;"/>
+    </children>
+</AnchorPane>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.DatePicker?>
+
+<AnchorPane fx:id="id_anchor" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(to bottom, #f8f9fa, #e9ecef);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RendezVousList">
+
+    <children>
+        <!-- Header Section with Glass Effect -->
+        <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 0 0 15 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 3);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <StackPane style="-fx-background-color: transparent;">
+                <children>
+                    <Button fx:id="acceuil" mnemonicParsing="false" onAction="#interfaceNutritionniste" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 8px 16px; -fx-background-radius: 5px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="🏠 Acceuil" />
+                </children>
+            </StackPane>
+
+            <Label style="-fx-text-fill: #2c3e50; -fx-font-size: 24px; -fx-font-weight: bold; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0, 0, 1);" text="Gestion des Rendez-vous" />
+
+            <!-- Action Buttons with Hover Effects -->
+            <Button fx:id="Calendar" mnemonicParsing="false" onAction="#viewCalendar" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 8px 16px; -fx-background-radius: 5px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="📅 Calendrier" />
+            <Button mnemonicParsing="false" onAction="#addRendezVous" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 8px 16px; -fx-background-radius: 5px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="➕ Nouveau" />
+            <Button fx:id="refreshButton" onAction="#handleRefreshButtonn" style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 8px 16px; -fx-background-radius: 5px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="🔄 Rafraîchir" />
+            <Button mnemonicParsing="false" onAction="#viewRegimes" style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 8px 16px; -fx-background-radius: 5px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="🍎 Voir Régimes" />
+        </HBox>
+
+        <!-- Main Content Area with SplitPane -->
+        <SplitPane dividerPositions="0.7" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
+            <items>
+                <!-- Left Panel: Rendez-vous List -->
+                <VBox spacing="15">
+                    <!-- Search and Filter Section with Modern Design -->
+                    <VBox spacing="10" style="-fx-background-color: rgba(255, 255, 255, 0.95); -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 3); -fx-padding: 15px;">
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <TextField fx:id="searchField" prefWidth="300.0" promptText="Rechercher par nom ou description" style="-fx-background-color: white; -fx-text-fill: #333; -fx-font-size: 14px; -fx-padding: 8px 12px; -fx-border-color: #ddd; -fx-border-width: 1px; -fx-background-radius: 5px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 3, 0, 0, 1);" />
+                            <Button fx:id="searchButton" onAction="#searchRendezVous" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 8px 16px; -fx-background-radius: 5px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);" text="🔍 Rechercher" />
+                        </HBox>
+                        
+                        <!-- Advanced Filters -->
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <DatePicker fx:id="dateFilter" promptText="Date" style="-fx-background-color: white; -fx-font-size: 14px; -fx-padding: 8px 12px; -fx-border-color: #ddd; -fx-border-width: 1px; -fx-background-radius: 5px;" />
+                            <ComboBox fx:id="statusFilter" promptText="Statut" style="-fx-background-color: white; -fx-font-size: 14px; -fx-padding: 8px 12px; -fx-border-color: #ddd; -fx-border-width: 1px; -fx-background-radius: 5px;" />
+                            <ComboBox fx:id="priorityFilter" promptText="Priorité" style="-fx-background-color: white; -fx-font-size: 14px; -fx-padding: 8px 12px; -fx-border-color: #ddd; -fx-border-width: 1px; -fx-background-radius: 5px;" />
+                            <Button onAction="#applyFilters" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 8px 16px; -fx-background-radius: 5px; -fx-cursor: hand;" text="Appliquer les filtres" />
+                        </HBox>
+                    </VBox>
+
+                    <!-- Rendez-vous List -->
+                    <ScrollPane hbarPolicy="NEVER" style="-fx-background-color: transparent; -fx-padding: 2px;" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+                        <content>
+                            <FlowPane fx:id="cardLayout" style="-fx-background-color: transparent; -fx-padding: 15px; -fx-hgap: 20px; -fx-vgap: 20px;">
+                                <padding>
+                                    <Insets bottom="10" left="10" right="10" top="10" />
+                                </padding>
+                            </FlowPane>
+                        </content>
+                    </ScrollPane>
+                </VBox>
+
+                <!-- Right Panel: Statistics -->
+                <VBox spacing="15" style="-fx-background-color: rgba(255, 255, 255, 0.95); -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 3); -fx-padding: 15px;">
+                    <Label text="Statistiques" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                    
+                    <!-- Statistics Cards -->
+                    <HBox spacing="10">
+                        <VBox style="-fx-background-color: #3498db; -fx-background-radius: 10; -fx-padding: 15px; -fx-min-width: 150px;" alignment="CENTER">
+                            <Label fx:id="totalRendezVous" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+                            <Label text="Total Rendez-vous" style="-fx-font-size: 14px; -fx-text-fill: white;" />
+                        </VBox>
+                        <VBox style="-fx-background-color: #2ecc71; -fx-background-radius: 10; -fx-padding: 15px; -fx-min-width: 150px;" alignment="CENTER">
+                            <Label fx:id="completedRendezVous" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+                            <Label text="Complétés" style="-fx-font-size: 14px; -fx-text-fill: white;" />
+                        </VBox>
+                        <VBox style="-fx-background-color: #e74c3c; -fx-background-radius: 10; -fx-padding: 15px; -fx-min-width: 150px;" alignment="CENTER">
+                            <Label fx:id="pendingRendezVous" text="0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+                            <Label text="En attente" style="-fx-font-size: 14px; -fx-text-fill: white;" />
+                        </VBox>
+                    </HBox>
+
+                    <!-- Charts -->
+                    <VBox spacing="10" VBox.vgrow="ALWAYS">
+                        <PieChart fx:id="statusChart" title="Répartition par Statut" style="-fx-font-size: 14px;" />
+                        <BarChart fx:id="monthlyChart" title="Rendez-vous par Mois" style="-fx-font-size: 14px;">
+                            <xAxis>
+                                <CategoryAxis label="Mois" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label="Nombre" />
+                            </yAxis>
+                        </BarChart>
+                    </VBox>
+                </VBox>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

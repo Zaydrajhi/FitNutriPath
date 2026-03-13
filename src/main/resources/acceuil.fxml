@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AcceuilController">
+
+    <top>
+        <VBox>
+            <HBox style="-fx-background-color: #f0f0f0; -fx-padding: 10;" spacing="20" alignment="CENTER_LEFT">
+                <Label text="Call : +216 71 208 354"/>
+                <Label text="Email : FitNutriPath@gmail.com"/>
+                <Label text="Lac 2 Av. du Yen"/>
+            </HBox>
+
+            <HBox style="-fx-background-color: white; -fx-padding: 15;" spacing="20" alignment="CENTER">
+                <StackPane>
+                    <Rectangle width="100" height="40" fill="#4CAF50" arcWidth="10" arcHeight="10"/>
+                    <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@images/logo1.jpeg"/>
+                        </image>
+                    </ImageView>
+                </StackPane>
+
+                <HBox alignment="CENTER_LEFT" spacing="15">
+                    <Button style="-fx-background-color: transparent;" text="Accueil" />
+
+                    <MenuButton fx:id="rendezVousMenu" text="Rendez-Vous" popupSide="BOTTOM" style="-fx-background-color: transparent;">
+                        <items>
+                            <MenuItem text="Prendre Rendez-vous" onAction="#prendreRendezVous"/>
+                            <MenuItem text="Mes rendez-vous" onAction="#afficherMesRendezVous"/>
+                            <MenuItem text="Predict for free" onAction="#predictForFree"/>
+                        </items>
+                    </MenuButton>
+
+                    <Button style="-fx-background-color: transparent;" text="Plan Sportif" onAction="#interfaceAjouterAbonnement" />
+                    <Button style="-fx-background-color: transparent;" text="Produit" onAction="#interfaceProduits"/>
+                    <Button style="-fx-background-color: transparent;" text="Evenement" onAction="#interfaceEvenement" />
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER">
+                    <ImageView fx:id="userImageView" fitHeight="40" fitWidth="40" preserveRatio="true">
+                        <Image url="@images/default_user.png"/>
+                    </ImageView>
+                    <VBox>
+                        <Label fx:id="userNameLabel" style="-fx-font-weight: bold;"/>
+                        <HBox spacing="10">
+                            <Hyperlink text="Voir mon profil" onAction="#handleProfil"/>
+                            <Hyperlink text="Se déconnecter" onAction="#handleLogout"/>
+                        </HBox>
+                    </VBox>
+                </HBox>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox spacing="30" style="-fx-padding: 20;">
+                <HBox spacing="50" alignment="CENTER" style="-fx-background-color: #f8f9fa; -fx-padding: 40;">
+                    <VBox spacing="20" prefWidth="400">
+                        <Label text="Mon Tableau de Bord" style="-fx-font-size: 36; -fx-font-weight: bold;"/>
+                        <Label text="Suivez votre progression, consultez vos plans et gérez vos rendez-vous facilement." wrapText="true"/>
+                        <Button text="Voir mes statistiques" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                    </VBox>
+                    <StackPane>
+                        <Rectangle width="400" height="300" fill="#cccccc"/>
+                        <Label text="Image Statistiques" style="-fx-text-fill: #666666;"/>
+                    </StackPane>
+                </HBox>
+
+                <HBox spacing="50" alignment="CENTER">
+                    <StackPane>
+                        <Rectangle width="400" height="400" fill="#e0e0e0"/>
+                        <Label text="Image Progression" style="-fx-text-fill: #666666;"/>
+                    </StackPane>
+                    <VBox spacing="20" prefWidth="400">
+                        <Label text="Ma Progression" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                        <Label text="Consultez vos statistiques personnelles, vos objectifs et votre progression." wrapText="true"/>
+                        <Button text="Voir ma progression" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                    </VBox>
+                </HBox>
+
+                <VBox spacing="30" style="-fx-background-color: #f8f9fa; -fx-padding: 40;" alignment="CENTER">
+                    <Label text="Mes Statistiques" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+
+                    <GridPane hgap="20" vgap="20" alignment="CENTER">
+                        <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-background-color: white; -fx-padding: 20;" spacing="15">
+                            <StackPane alignment="CENTER">
+                                <Circle radius="50" fill="#4CAF50"/>
+                                <Label text="IMC" style="-fx-font-size: 14;"/>
+                            </StackPane>
+                            <Label fx:id="bmiLabel" text="0" style="-fx-font-weight: bold;" alignment="CENTER"/>
+                            <Label text="Votre IMC" wrapText="true"/>
+                        </VBox>
+
+                        <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" style="-fx-background-color: white; -fx-padding: 20;" spacing="15">
+                            <StackPane alignment="CENTER">
+                                <Circle radius="50" fill="#2196F3"/>
+                                <Label text="POIDS" style="-fx-font-size: 14;"/>
+                            </StackPane>
+                            <Label fx:id="weightGoalLabel" text="0 kg" style="-fx-font-weight: bold;" alignment="CENTER"/>
+                            <Label text="Objectif de poids" wrapText="true"/>
+                        </VBox>
+
+                        <VBox GridPane.columnIndex="2" GridPane.rowIndex="0" style="-fx-background-color: white; -fx-padding: 20;" spacing="15">
+                            <StackPane alignment="CENTER">
+                                <Circle radius="50" fill="#FFC107"/>
+                                <Label text="PROGRÈS" style="-fx-font-size: 14;"/>
+                            </StackPane>
+                            <Label fx:id="progressLabel" text="0%" style="-fx-font-weight: bold;" alignment="CENTER"/>
+                            <Label text="Votre progression" wrapText="true"/>
+                        </VBox>
+                    </GridPane>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <VBox style="-fx-background-color: #333333; -fx-padding: 30;" spacing="20">
+            <HBox alignment="CENTER" spacing="50">
+                <StackPane>
+                    <Rectangle width="100" height="40" fill="#4CAF50" arcWidth="10" arcHeight="10"/>
+                    <ImageView fitHeight="40.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@images/logo1.jpeg"/>
+                        </image>
+                    </ImageView>
+                </StackPane>
+
+                <HBox spacing="10" alignment="CENTER">
+                    <TextField promptText="Votre email" style="-fx-prompt-text-fill: #999999;"/>
+                    <Button text="S'abonner" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                </HBox>
+            </HBox>
+
+            <HBox alignment="TOP_CENTER" spacing="50">
+                <VBox spacing="10">
+                    <Label text="Adresse" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+                    <Label text="Lac 2 Av du Yen" style="-fx-text-fill: white;"/>
+                    <Label text="Call +216 71 208 354" style="-fx-text-fill: white;"/>
+                    <Label text="FitNutriPath@gmail.com" style="-fx-text-fill: white;"/>
+
+                    <HBox spacing="15">
+                        <Label text="FB" style="-fx-font-size: 14; -fx-text-fill: white;"/>
+                        <Label text="TW" style="-fx-font-size: 14; -fx-text-fill: white;"/>
+                        <Label text="IN" style="-fx-font-size: 14; -fx-text-fill: white;"/>
+                        <Label text="IG" style="-fx-font-size: 14; -fx-text-fill: white;"/>
+                    </HBox>
+                </VBox>
+
+                <VBox spacing="10">
+                    <Label text="Liens utiles" style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+                    <Hyperlink text="Accueil" style="-fx-text-fill: white;"/>
+                    <Hyperlink text="Mon Profil" style="-fx-text-fill: white;"/>
+                    <Hyperlink text="Mes Plans" style="-fx-text-fill: white;"/>
+                    <Hyperlink text="Mes Rendez-vous" style="-fx-text-fill: white;"/>
+                </VBox>
+            </HBox>
+
+            <Label text="© 2023 FitNutriPath - Tous droits réservés" style="-fx-text-fill: white; -fx-alignment: CENTER;"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>

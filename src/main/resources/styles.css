@@ -1,0 +1,575 @@
+/* Style du texte du nom de l'application */
+.app-name {
+    -fx-font-size: 25px;  /* Taille de la police */
+    -fx-font-family: "Verdana";  /* Police du titre */
+    -fx-font-weight: bold;  /* Gras */
+    -fx-text-fill: #677e93;  /* Couleur du texte */
+    -fx-line-spacing: 5px;  /* Espacement entre les lignes si nécessaire */
+    -fx-padding: 10px;  /* Padding autour du texte */
+}
+
+/* Style de l'image du logo */
+#logo {
+    -fx-fit-width: 80px;  /* Largeur du logo */
+    -fx-fit-height: 80px;  /* Hauteur du logo */
+    -fx-preserve-ratio: true;  /* Maintenir le ratio de l'image */
+}
+
+/* Style par défaut des boutons du menu */
+.menu-button {
+    -fx-background-color: white;  /* Fond blanc pour les boutons */
+    -fx-text-fill: #677e93;  /* Texte en bleu */
+    -fx-font-size: 14px;  /* Taille de la police */
+    -fx-font-weight: bold;  /* Texte en gras */
+    -fx-border-color: #677e93;  /* Bordure bleue */
+    -fx-border-width: 2px;  /* Épaisseur de la bordure */
+    -fx-padding: 10 20;  /* Padding adapté pour ajouter de l'espace pour les icônes */
+    -fx-cursor: hand;
+    -fx-min-width: 180px;  /* Largeur minimale des boutons */
+    -fx-max-width: 180px;  /* Largeur maximale des boutons */
+    -fx-background-radius: 30px;  /* Coins arrondis */
+    -fx-border-radius: 30px;  /* Coins arrondis pour la bordure */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0, 0, 4);  /* Ombre légère */
+}
+
+/* Effet de survol (hover) */
+.menu-button:hover {
+    -fx-background-color: #677e93;  /* Fond bleu au survol */
+    -fx-text-fill: white;  /* Texte en blanc */
+    -fx-border-radius: 30px;  /* Coins arrondis */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 8, 0, 0, 6);  /* Ombre renforcée */
+}
+
+/* Style lors du clic (pressed) */
+.menu-button:pressed {
+    -fx-background-color: #677e93;  /* Bleu foncé lors du clic */
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 5);  /* Ombre modérée */
+}
+
+/* Style de la VBox contenant les boutons */
+.menuVBox {
+    -fx-background-color: rgba(255, 255, 255, 0.6);  /* Fond blanc semi-transparent pour la VBox */
+    -fx-border-color:  #677e93;  /* Bordure bleue */
+    -fx-border-width: 5px;  /* Bordure de 3px pour la rendre plus visible */
+    -fx-border-radius: 40px;  /* Coins arrondis pour la VBox */
+    -fx-padding: 20;  /* Padding interne */
+    -fx-spacing: 40;  /* Espacement entre les boutons */
+    -fx-alignment: center;  /* Centrage des boutons */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 15);  /* Ombre plus marquée pour éviter de cacher la bordure */
+}
+
+/* HBox pour l'alignement du nom et logo */
+#headerHBox {
+    -fx-alignment: center-left;  /* Alignement à gauche du nom et du logo */
+    -fx-spacing: 10;  /* Espacement entre le logo et le nom */
+    -fx-padding: 10;  /* Padding autour du HBox */
+}
+
+/* Style pour les boutons demandés */
+#bt_dp, #bt_rechercher, #retourner ,#bt_ajouter , #afficher ,#bt_modifier, #btLR {
+    -fx-background-color: #c7f705;  /* Fond jaune */
+    -fx-text-fill: black;  /* Texte en noir */
+    -fx-font-weight: bold;  /* Texte en gras */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 4);  /* Ombre */
+    -fx-border-radius: 10px;  /* Coins arrondis */
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;  /* Espacement interne */
+}
+
+/* Animation au survol */
+#btn_filtrer:hover, #tri:hover, #retourner,#btn_ajouter , #afficher , #btn_modifier :hover {
+    -fx-background-color: #e0ff33;  /* Jaune plus clair */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 12, 0, 0, 6);  /* Ombre renforcée */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Animation lors du clic */
+#btn_filtrer:pressed, #tri:pressed, #retourner , #btn_ajouter , #afficher , #btn_modifier :pressed {
+    -fx-background-color: #b2cf04;  /* Jaune plus foncé */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0, 0, 3);  /* Ombre réduite */
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+/* Style du GridPane */
+.grid-pane {
+    -fx-padding: 20; /* Espacement interne du GridPane */
+    -fx-hgap: 30; /* Espacement horizontal entre les cartes */
+    -fx-background-radius: 40px; /* Coins arrondis */
+    -fx-vgap: 20; /* Espacement vertical entre les cartes */
+    -fx-alignment: center; /* Centrer les cartes dans le GridPane */
+}
+
+/* Style des cartes amélioré */
+.card {
+    -fx-background-color: linear-gradient(to bottom right, white, #f8f9fa);
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-border-color: #677e93;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+    -fx-padding: 20;
+    -fx-min-width: 300px;
+    -fx-min-height: 400px;
+    -fx-max-width: 300px;
+    -fx-max-height: 500px;
+    -fx-spacing: 15;
+}
+
+.card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(103, 126, 147, 0.5), 15, 0, 0, 7);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-border-color: #39cad8;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+/* Style de l'image dans la carte */
+.card-image {
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 3);
+}
+
+.card-image-container {
+    -fx-background-radius: 15px;
+    -fx-padding: 0 0 10 0;
+}
+
+/* Style du texte dans les cartes amélioré */
+.card-text {
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -fx-text-fill: #495057;
+    -fx-wrap-text: true;
+    -fx-padding: 5 0;
+}
+
+/* Style du titre dans les cartes amélioré */
+.card-title {
+    -fx-font-size: 20px;
+    -fx-font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    -fx-text-fill: #39cad8;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0;
+}
+
+/* Style pour les ChoiceBox */
+.choice-box {
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 20px;
+    -fx-border-color: #677e93;
+    -fx-border-width: 2px;
+    -fx-padding: 5;
+    -fx-font-size: 14px;
+}
+
+.choice-box:hover {
+    -fx-border-color: #39cad8;
+}
+
+/* Style pour le ScrollPane */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #677e93;
+    -fx-background-radius: 5em;
+}
+
+.scroll-bar:vertical .thumb:hover,
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #39cad8;
+}
+
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0, 0, 10);
+}
+
+/* Style pour la VBox contenant les détails de l'événement */
+.details-container {
+    -fx-background-color: rgba(255, 255, 255, 0.6);  /* Fond semi-transparent similaire à celui du menu */
+    -fx-background-radius: 20px; /* Coins arrondis */
+    -fx-padding: 20;  /* Padding interne */
+    -fx-border-radius: 40px;  /* Coins arrondis */
+    -fx-spacing: 20;  /* Espacement interne entre les éléments */
+    -fx-alignment: center;  /* Centrage des éléments */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 15);  /* Ombre légère pour un effet élégant */
+}
+
+
+/* Style du titre de l'événement */
+.event-title {
+    -fx-text-fill: white;
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);
+}
+
+/* Style de la description de l'événement */
+.event-description {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-wrap-text: true;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 3);
+}
+
+/* Style des informations supplémentaires */
+.info-label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 3);
+}
+
+/* Style des boutons d'action */
+.action-button {
+    -fx-background-color: #e0ff33;
+    -fx-text-fill: black ;
+    -fx-font-size: 16px;
+    -fx-padding: 10 20;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+    -fx-transition: all 0.3s ease;
+}
+
+.action-button:hover {
+    -fx-background-color: #e0ff33; /* Rouge plus clair au survol */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 15, 0, 0, 10);
+}
+
+/* Style du bouton de réservation */
+.reserve-button {
+    -fx-background-color: #e0ff33; /* Rouge */
+    -fx-text-fill: black;
+    -fx-font-size: 18px;
+    -fx-padding: 15 30;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+    -fx-transition: all 0.3s ease;
+}
+
+.reserve-button:hover {
+    -fx-background-color: #e0ff33; /* Rouge plus clair au survol */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 15, 0, 0, 10);
+}
+
+/* Style pour le conteneur des boutons du menu */
+.menu-buttons-container {
+    -fx-padding: 20 10;
+    -fx-spacing: 15;
+}
+
+/* Style pour l'en-tête */
+.header-container {
+    -fx-padding: 20 30;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+}
+
+/* Style pour le titre de la page */
+.page-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0, 0, 2);
+}
+
+/* Style pour le conteneur des filtres */
+.filters-container {
+    -fx-padding: 20 30;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Style pour les labels des filtres */
+.filter-label {
+    -fx-fill: white;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 3, 0, 0, 1);
+}
+
+/* Style pour le ScrollPane des réservations */
+.reservations-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 20;
+}
+
+/* Style pour le contenu des cartes */
+.card-content {
+    -fx-padding: 10 0;
+}
+
+/* Style pour le badge de statut */
+.status-badge {
+    -fx-background-color: #39cad8;
+    -fx-text-fill: white;
+    -fx-padding: 5 10;
+    -fx-background-radius: 15;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* Style pour les actions de la carte */
+.card-actions {
+    -fx-padding: 10 0;
+    -fx-spacing: 10;
+}
+
+/* Style pour le bouton d'annulation */
+.cancel-button {
+    -fx-background-color: #ff4d4d;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #ff6666;
+}
+
+/* Style pour le conteneur de statut */
+.status-container {
+    -fx-padding: 5 0;
+}
+
+/* Style de base pour le bouton Retour */
+.button-retour {
+    -fx-background-color: #F0F0F0; /* Fond gris clair */
+    -fx-text-fill: #333333; /* Texte gris foncé */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-font-weight: bold; /* Texte en gras */
+    -fx-padding: 8 12 8 12; /* Padding (haut, droite, bas, gauche) */
+    -fx-border-radius: 5; /* Coins arrondis pour la bordure */
+    -fx-background-radius: 5; /* Coins arrondis pour le fond */
+    -fx-cursor: hand; /* Curseur en forme de main au survol */
+    -fx-alignment: center-left; /* Alignement du texte et de l'icône à gauche */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2); /* Ombre légère */
+}
+
+/* Style au survol */
+.button-retour:hover {
+    -fx-background-color: #E0E0E0; /* Fond gris un peu plus foncé au survol */
+    -fx-text-fill: #000000; /* Texte noir au survol */
+}
+
+/* Style lorsqu'on appuie sur le bouton */
+.button-retour:pressed {
+    -fx-background-color: #D0D0D0; /* Fond gris encore plus foncé lors du clic */
+    -fx-text-fill: #000000; /* Texte noir lors du clic */
+}
+
+/* Style de l'icône (utilise un caractère Unicode ou une image) */
+.button-retour .label {
+    -fx-graphic: "←"; /* Flèche gauche Unicode */
+    -fx-graphic-text-gap: 8; /* Espace entre l'icône et le texte */
+}
+/* Styles pour les labels de la météo */
+.weather-label {
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #333333; /* Gris foncé pour un bon contraste */
+    -fx-font-weight: bold;
+}
+
+/* Styles pour les titres (ex: "Prévisions Quotidiennes", "Prévisions Horaires") */
+.weather-title {
+    -fx-font-size: 20px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #ffffff; /* Blanc pour contraster avec le fond dégradé */
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 2, 0, 0, 1); /* Ombre légère pour lisibilité */
+}
+
+/* Style pour les ListView (forecastListView et hourlyListView) */
+.list-view {
+    -fx-background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent */
+    -fx-background-radius: 10; /* Coins arrondis */
+    -fx-border-color: #cccccc; /* Bordure légère */
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #333333;
+}
+
+/* Style pour les cellules dans les ListView */
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333333;
+    -fx-padding: 5 10 5 10; /* Espacement interne */
+}
+
+/* Style pour les cellules survolées */
+.list-cell:hover {
+    -fx-background-color: rgba(57, 202, 216, 0.2); /* Bleu clair semi-transparent au survol */
+}
+
+/* Style pour les cellules sélectionnées */
+.list-cell:selected {
+    -fx-background-color: rgba(57, 202, 216, 0.4); /* Bleu légèrement plus foncé */
+    -fx-text-fill: #ffffff;
+}
+
+/* Style pour le TextField (cityField) */
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-font-size: 14px;
+    -fx-padding: 5;
+}
+
+/* Style pour le ComboBox (daysComboBox) */
+.combo-box {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-font-size: 14px;
+}
+
+/* Style pour le bouton "Voir les réservations" */
+.view-reservations-button {
+    background-color: #4285F4;  /* Couleur bleue de Google */
+    color: white;  /* Texte blanc */
+    font-size: 14px;
+    padding: 8px 16px;  /* Espacement intérieur du bouton */
+    border-radius: 4px;  /* Coins arrondis */
+    border: none;  /* Pas de bordure */
+    cursor: pointer;  /* Curseur en forme de main au survol */
+    transition: background-color 0.3s ease;  /* Transition douce pour les changements de couleur */
+}
+
+.view-reservations-button:hover {
+    background-color: #357AE8;  /* Couleur bleue légèrement plus sombre au survol */
+}
+
+.header-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding: 20px;
+}
+
+/* Styles spécifiques pour la liste d'attente */
+.waiting-list-view {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-color: #677e93;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+}
+
+.waiting-list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 15px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.waiting-list-view .list-cell:hover {
+    -fx-background-color: rgba(103, 126, 147, 0.1);
+}
+
+.waiting-list-view .list-cell:selected {
+    -fx-background-color: rgba(57, 202, 216, 0.2);
+    -fx-border-color: #39cad8;
+    -fx-border-width: 0 0 1 0;
+}
+
+.waiting-list-view .list-cell .label {
+    -fx-text-fill: #333333;
+}
+
+.waiting-list-view .list-cell:selected .label {
+    -fx-text-fill: #39cad8;
+    -fx-font-weight: bold;
+}
+
+/* Style pour le statut dans la liste d'attente */
+.status-available {
+    -fx-text-fill: #2ecc71;
+    -fx-font-weight: bold;
+}
+
+.status-waiting {
+    -fx-text-fill: #f39c12;
+    -fx-font-weight: bold;
+}
+
+/* Style pour le conteneur d'informations dans la liste */
+.list-info-container {
+    -fx-spacing: 8;
+    -fx-padding: 5;
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.main-button {
+    -fx-background-color: #39cad8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.main-button:hover {
+    -fx-background-color: #2fb3c0;
+}
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #333333;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.menu-button:hover {
+    -fx-background-color: rgba(57, 202, 216, 0.1);
+}
+
+.menu-button .image-view {
+    -fx-fit-width: 20px;
+    -fx-fit-height: 20px;
+}
+
+.menuVBox {
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 5, 0);
+}
+
+.app-name {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.main-container {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-padding: 20px;
+}
+
+

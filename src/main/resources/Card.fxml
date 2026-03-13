@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<VBox fx:id="cardContainer" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controller.CardController" spacing="0" style="-fx-background-radius: 10;"
+      maxWidth="300" minWidth="280" prefWidth="290">
+
+    <!-- Header -->
+    <HBox fx:id="priorityBox" alignment="CENTER_LEFT" style="-fx-padding: 8 15;">
+        <Rectangle fx:id="colorIndicator" width="8" height="8" arcWidth="5" arcHeight="5"/>
+        <Label fx:id="lblType" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 0 0 0 5;"/>
+    </HBox>
+
+    <!-- Card Body -->
+    <VBox style="-fx-padding: 15; -fx-spacing: 10; -fx-background-radius: 0 0 10 10;">
+        <!-- Name -->
+        <Label fx:id="lblNomPrenom" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #333;"/>
+
+        <!-- Date/Time -->
+        <HBox spacing="5" alignment="CENTER_LEFT">
+            <ImageView fitWidth="16" fitHeight="16" preserveRatio="true">
+                <image>
+                    <Image url="@/images/calendar.png"/>
+                </image>
+            </ImageView>
+            <Label fx:id="lblDateTime" style="-fx-text-fill: #666; -fx-font-size: 13;"/>
+        </HBox>
+
+        <!-- Details -->
+        <Label fx:id="lblDetails" style="-fx-text-fill: #555; -fx-font-size: 12; -fx-wrap-text: true;"/>
+
+        <!-- Separator -->
+        <Separator style="-fx-background-color: #eee; -fx-padding: 5 0;"/>
+
+        <!-- Status -->
+        <HBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="État:" style="-fx-text-fill: #777; -fx-font-size: 12;"/>
+            <Label fx:id="lblEtat" style="-fx-text-fill: #444; -fx-font-weight: bold; -fx-font-size: 12;"/>
+        </HBox>
+    </VBox>
+</VBox>

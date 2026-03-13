@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.HealthMetricsController"
+      spacing="10"
+      padding="20">
+
+    <Label text="Calculs de Santé" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    
+    <GridPane vgap="10" hgap="10">
+        <Label text="Poids (kg):" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="poidsField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        
+        <Label text="Taille (cm):" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="tailleField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        
+        <Label text="Âge:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="ageField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        
+        <Label text="Sexe:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="sexeComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        
+        <Label text="Tour de taille (cm):" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="tourDeTailleField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        
+        <Label text="Tour de hanche (cm):" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="tourDeHancheField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Button text="Calculer" onAction="#calculerMetrics" 
+            style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+
+    <VBox spacing="10" style="-fx-padding: 20 0 0 0;">
+        <Label text="Résultats" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        
+        <VBox spacing="5">
+            <Label fx:id="imcResultLabel" style="-fx-font-weight: bold;"/>
+            <Label fx:id="imcInterpretationLabel"/>
+        </VBox>
+        
+        <VBox spacing="5">
+            <Label fx:id="graisseResultLabel" style="-fx-font-weight: bold;"/>
+            <Label fx:id="graisseInterpretationLabel"/>
+        </VBox>
+        
+        <VBox spacing="5">
+            <Label fx:id="ratioResultLabel" style="-fx-font-weight: bold;"/>
+            <Label fx:id="ratioInterpretationLabel"/>
+        </VBox>
+        
+        <VBox spacing="5">
+            <Label fx:id="poidsIdealLabel" style="-fx-font-weight: bold;"/>
+        </VBox>
+    </VBox>
+
+</VBox> 

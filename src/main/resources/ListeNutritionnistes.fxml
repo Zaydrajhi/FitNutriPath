@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListeNutritionnistesController">
+    <children>
+
+        <!-- Barre latérale -->
+        <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="240.0" style="-fx-background-color: #05071F;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="73.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/sports-admin.png" />
+                    </image>
+                    <VBox.margin><Insets top="40.0" bottom="10.0" /></VBox.margin>
+                </ImageView>
+                <Label fx:id="labelNomUtilisateur" style="-fx-text-fill: white;" text="Bienvenue, Admin" />
+                <Label text="Admin Sportif" textFill="#e7e5e5">
+                    <VBox.margin><Insets bottom="20.0" /></VBox.margin>
+                </Label>
+
+                <Button fx:id="btnParticipants" prefHeight="40.0" prefWidth="220.0" stylesheets="@dashboard.css" text="Users">
+                    <graphic><ImageView fitHeight="20.0" fitWidth="24.0"><image><Image url="@images/profile.png" /></image></ImageView></graphic>
+                    <padding><Insets left="40.0" /></padding>
+                </Button>
+
+                <Button fx:id="btnNutritionnistes" prefHeight="40.0" prefWidth="220.0" stylesheets="@dashboard.css" text="Liste des Nutritionnistes">
+                    <graphic><ImageView fitHeight="20.0" fitWidth="24.0"><image><Image url="@images/profile.png" /></image></ImageView></graphic>
+                    <padding><Insets left="40.0" /></padding>
+                </Button>
+
+                <Button fx:id="btnCoachs" prefHeight="40.0" prefWidth="220.0" stylesheets="@dashboard.css" text="Liste des Coachs">
+                    <graphic><ImageView fitHeight="20.0" fitWidth="24.0"><image><Image url="@images/profile.png" /></image></ImageView></graphic>
+                    <padding><Insets left="40.0" /></padding>
+                </Button>
+
+                <Button fx:id="btnEnAttente" prefHeight="40.0" prefWidth="220.0" stylesheets="@dashboard.css" text="Liste en Attente">
+                    <graphic><ImageView fitHeight="20.0" fitWidth="24.0"><image><Image url="@images/profile.png" /></image></ImageView></graphic>
+                    <padding><Insets left="40.0" /></padding>
+                </Button>
+
+                <Button fx:id="btnEvents" prefHeight="40.0" prefWidth="220.0" stylesheets="@dashboard.css" text="Événements">
+                    <graphic><ImageView fitHeight="20.0" fitWidth="24.0"><image><Image url="@images/icons8_Event_32px.png" /></image></ImageView></graphic>
+                    <padding><Insets left="40.0" /></padding>
+                </Button>
+
+                <Button fx:id="btnResults" prefHeight="40.0" prefWidth="220.0" stylesheets="@dashboard.css" text="Rendez-vous">
+                    <graphic><ImageView fitHeight="24.0" fitWidth="26.0"><image><Image url="@images/rdv.jpeg" /></image></ImageView></graphic>
+                    <padding><Insets left="40.0" /></padding>
+                </Button>
+
+                <Button fx:id="btnProduits" prefHeight="40.0" prefWidth="220.0" stylesheets="@dashboard.css" text="Produits Sportifs">
+                    <graphic><ImageView fitHeight="20.0" fitWidth="24.0"><image><Image url="@images/salle-de-sport.png" /></image></ImageView></graphic>
+                    <padding><Insets left="40.0" /></padding>
+                </Button>
+
+                <Button fx:id="btn_workout" prefHeight="40.0" prefWidth="220.0" stylesheets="@dashboard.css" text="Plan Sportif">
+                    <graphic><ImageView fitHeight="20.0" fitWidth="24.0"><image><Image url="@images/fitness.png" /></image></ImageView></graphic>
+                    <padding><Insets left="40.0" /></padding>
+                </Button>
+
+                <Button fx:id="btnSettings" prefHeight="40.0" prefWidth="220.0" stylesheets="@dashboard.css" text="Paramètres">
+                    <graphic><ImageView fitHeight="20.0" fitWidth="24.0"><image><Image url="@images/icons8_Slider__32px.png" /></image></ImageView></graphic>
+                    <padding><Insets left="40.0" /></padding>
+                </Button>
+
+                <Button fx:id="logoutButton" prefHeight="40.0" prefWidth="220.0" stylesheets="@dashboard.css" text="Déconnexion">
+                    <graphic><ImageView fitHeight="20.0" fitWidth="24.0"><image><Image url="@images/icons8_Sign_Out_32px.png" /></image></ImageView></graphic>
+                    <padding><Insets left="40.0" /></padding>
+                </Button>
+            </children>
+        </VBox>
+
+        <!-- Contenu principal -->
+        <StackPane layoutX="240.0" layoutY="0.0" prefHeight="720.0" prefWidth="840.0" AnchorPane.leftAnchor="240.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Pane fx:id="pnlNutritionnistes" prefHeight="720.0" prefWidth="840.0">
+                    <children>
+                        <Label layoutX="20.0" layoutY="20.0" style="-fx-text-fill: white; -fx-font-size: 18px;" text="Liste des Nutritionnistes" />
+
+                        <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.topAnchor="60.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0" layoutX="20.0" layoutY="60.0" prefHeight="640.0" prefWidth="800.0">
+                            <content>
+                                <TableView fx:id="tableViewNutritionnistes">
+                                    <columns>
+                                        <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                                        <TableColumn fx:id="colLogin" prefWidth="120.0" text="Login" />
+                                        <TableColumn fx:id="colNom" prefWidth="90.0" text="Nom" />
+                                        <TableColumn fx:id="colPrenom" prefWidth="90.0" text="Prénom" />
+                                        <TableColumn fx:id="colTel" prefWidth="90.0" text="Téléphone" />
+                                        <TableColumn fx:id="colEmail" prefWidth="180.0" text="Email" />
+                                        <TableColumn fx:id="colImage" prefWidth="80.0" text="Image" />
+                                        <TableColumn fx:id="colActions" prefWidth="80.0" text="Actions" />
+                                    </columns>
+                                </TableView>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </Pane>
+            </children>
+        </StackPane>
+    </children>
+    <effect>
+        <DropShadow color="#1b1eeb" />
+    </effect>
+</AnchorPane>

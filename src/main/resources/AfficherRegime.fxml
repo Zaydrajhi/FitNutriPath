@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Rectangle?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.AfficherRegimeController" spacing="10" style="-fx-padding: 20;"
+      prefHeight="800.0" prefWidth="1200.0">
+
+    <!-- Header Section -->
+    <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+        <Label text="Regime Management" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #333333;" HBox.hgrow="ALWAYS"/>
+        <Button text="Add New" onAction="#handleAddNew"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button text="Back to Rendez-Vous" onAction="#handleBackToRendezVous"
+                style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        <Button text="Close" onAction="#handleClose"
+                style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <!-- TableView Section -->
+    <TableView fx:id="regimeTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="titreCol" text="Titre" prefWidth="150"/>
+            <TableColumn fx:id="descriptionCol" text="Description" prefWidth="300"/>
+            <TableColumn fx:id="objectifCol" text="Objectif" prefWidth="150"/>
+            <TableColumn fx:id="dureeCol" text="Durée (jours)" prefWidth="100"/>
+            <TableColumn fx:id="caloriesCol" text="Calories" prefWidth="100"/>
+            <TableColumn fx:id="activiteCol" text="Niveau d'activité" prefWidth="150"/>
+            <TableColumn fx:id="actionsCol" text="Actions" prefWidth="150"/>
+        </columns>
+    </TableView>
+</VBox>

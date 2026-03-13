@@ -1,0 +1,65 @@
+/* Appliquer un style global */
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #f0f0f5; /* Couleur de fond douce */
+}
+
+/* Style des labels */
+.label {
+    -fx-font-size: 12px;  /* Réduction supplémentaire de la taille */
+    -fx-font-weight: normal; /* Suppression du gras */
+    -fx-text-fill: #2c3e50; /* Bleu foncé */
+}
+
+/* Style des champs de texte */
+.text-field {
+    -fx-font-size: 12px;
+    -fx-padding: 5px;  /* Légère réduction du padding */
+    -fx-border-color: #3498db; /* Bleu vif */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-background-color: white;
+}
+
+/* Effet lors du focus sur un champ de texte */
+.text-field:focused {
+    -fx-border-color: #2980b9; /* Bleu plus foncé */
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.3), 8, 0.4, 0, 0);
+}
+
+/* Style du bouton */
+.button {
+    -fx-background-color: #27ae60; /* Vert foncé */
+    -fx-text-fill: white;
+    -fx-font-size: 12px;  /* Réduction de la taille du texte du bouton */
+    -fx-font-weight: bold;
+    -fx-border-radius: 6px;
+    -fx-padding: 6px 10px; /* Réduction du padding */
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-transition: 0.3s;
+}
+
+/* Effet sur le bouton lors du passage de la souris */
+.button:hover {
+    -fx-background-color: #2ecc71; /* Vert plus clair */
+}
+
+/* Effet sur le bouton lorsqu'il est pressé */
+.button:pressed {
+    -fx-background-color: #1e8449; /* Vert encore plus foncé */
+}
+
+/* Effet pour donner un aspect "cartes" aux formulaires */
+AnchorPane {
+    -fx-padding: 10px; /* Ajustement du padding */
+    -fx-background-color: white;
+    -fx-border-color: #dcdde1;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 8, 0.4, 0, 2);
+}
+

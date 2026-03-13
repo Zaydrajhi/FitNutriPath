@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+
+<?import controller.UpdateUserController?>
+
+<AnchorPane prefHeight="786.0" prefWidth="1080.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateUserController">
+    <children>
+
+        <!-- Barre latérale identique -->
+        <VBox alignment="TOP_CENTER" prefHeight="786.0" prefWidth="256.0" style="-fx-background-color: #05071F;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="73.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                    <image><Image url="@images/sports-admin.png" /></image>
+                    <VBox.margin><Insets top="50.0" bottom="10.0"/></VBox.margin>
+                </ImageView>
+                <Label text="Mise à jour utilisateur" style="-fx-text-fill: white;" />
+                <!-- Les mêmes boutons de navigation -->
+            </children>
+        </VBox>
+
+        <!-- Zone de mise à jour -->
+        <StackPane layoutX="258.0" layoutY="0.0" prefHeight="786.0" prefWidth="1289.0" AnchorPane.rightAnchor="0.0" AnchorPane.leftAnchor="256.0">
+            <children>
+                <Pane prefHeight="786.0" prefWidth="1291.0">
+                    <children>
+                        <Label layoutX="30.0" layoutY="30.0" text="Modifier l'utilisateur" style="-fx-text-fill: white; -fx-font-size: 20px;" />
+
+                        <GridPane layoutX="50.0" layoutY="80.0" hgap="15.0" vgap="15.0">
+                            <columnConstraints>
+                                <ColumnConstraints prefWidth="150.0" />
+                                <ColumnConstraints prefWidth="250.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints prefHeight="40.0"/>
+                            </rowConstraints>
+
+                            <children>
+                                <Label text="Login :" style="-fx-text-fill: white;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <TextField fx:id="tfLogin" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                <Label text="Nom :" style="-fx-text-fill: white;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <TextField fx:id="tfNom" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="Prénom :" style="-fx-text-fill: white;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <TextField fx:id="tfPrenom" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                <Label text="Téléphone :" style="-fx-text-fill: white;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                                <TextField fx:id="tfTel" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                                <Label text="Email :" style="-fx-text-fill: white;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                                <TextField fx:id="tfEmail" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                                <Label text="Rôle :" style="-fx-text-fill: white;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                                <ComboBox fx:id="cbRole" prefWidth="250.0" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                                <Label text="Image URL :" style="-fx-text-fill: white;" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                                <TextField fx:id="tfImage" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                                <Button text="Enregistrer les modifications" fx:id="btnUpdate" style="-fx-background-color: #27ae60; -fx-text-fill: white;" GridPane.rowIndex="7" GridPane.columnIndex="1" onAction="#updateUser"/>
+                            </children>
+                        </GridPane>
+                    </children>
+                </Pane>
+            </children>
+        </StackPane>
+    </children>
+    <effect><DropShadow color="#1b1eeb" /></effect>
+</AnchorPane>

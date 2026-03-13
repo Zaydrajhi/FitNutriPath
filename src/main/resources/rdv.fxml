@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<HBox fx:id="rdvCard" spacing="20" style="-fx-padding: 10; -fx-background-color: #f0f0f0; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml">
+    <VBox spacing="5">
+        <Label fx:id="labelTitre" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+        <Label fx:id="labelDate" style="-fx-text-fill: #555;" />
+    </VBox>
+</HBox>
